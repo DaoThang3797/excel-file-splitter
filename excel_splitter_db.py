@@ -217,7 +217,7 @@ def get_data_for_sheet(db_path, start_row, row_count):
     # Truy vấn dữ liệu
     query = f"""
     SELECT serial, qri FROM excel_data
-    ORDER BY serial
+    ORDER BY source_sheet, row_num
     LIMIT {row_count} OFFSET {start_row - 1}
     """
     
